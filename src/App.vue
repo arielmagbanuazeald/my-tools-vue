@@ -23,14 +23,33 @@
                 <md-list>
                     <md-list-item>
                         <md-icon>move_to_inbox</md-icon>
-                        <span class="md-list-item-text">Inbox</span>
+                        <router-link to="/" exact>
+                            <span class="md-list-item-text"><a>Text Difference</a></span>
+                        </router-link>
                     </md-list-item>
 
                     <md-list-item>
                         <md-icon>send</md-icon>
-                        <span class="md-list-item-text">Sent Mail</span>
+                        <router-link to="/ipsum-generator" exact>
+                            <span class="md-list-item-text"><a>Ipsum Generator</a></span>
+                        </router-link>
                     </md-list-item>
 
+                    <md-list-item>
+                        <md-icon>send</md-icon>
+                        <router-link to="/json-lint" exact>
+                            <span class="md-list-item-text"><a>JSON Lint</a></span>
+                        </router-link>
+                    </md-list-item>
+
+                    <md-list-item>
+                        <md-icon>send</md-icon>
+                        <router-link to="/css-lint" exact>
+                            <span class="md-list-item-text"><a>Css Lint</a></span>
+                        </router-link>
+                    </md-list-item>
+
+                    <!--
                     <md-list-item>
                         <md-icon>delete</md-icon>
                         <span class="md-list-item-text">Trash</span>
@@ -40,54 +59,22 @@
                         <md-icon>error</md-icon>
                         <span class="md-list-item-text">Spam</span>
                     </md-list-item>
+                    -->
                 </md-list>
             </md-drawer>
-
-            <md-drawer class="md-right" :md-active.sync="showSidepanel">
-                <md-toolbar class="md-transparent" md-elevation="0">
-                    <span class="md-title">Favorites</span>
-                </md-toolbar>
-
-                <md-list>
-                    <md-list-item>
-                        <span class="md-list-item-text">Abbey Christansen</span>
-
-                        <md-button class="md-icon-button md-list-action">
-                            <md-icon class="md-primary">chat_bubble</md-icon>
-                        </md-button>
-                    </md-list-item>
-
-                    <md-list-item>
-                        <span class="md-list-item-text">Alex Nelson</span>
-
-                        <md-button class="md-icon-button md-list-action">
-                            <md-icon class="md-primary">chat_bubble</md-icon>
-                        </md-button>
-                    </md-list-item>
-
-                    <md-list-item>
-                        <span class="md-list-item-text">Mary Johnson</span>
-
-                        <md-button class="md-icon-button md-list-action">
-                            <md-icon>chat_bubble</md-icon>
-                        </md-button>
-                    </md-list-item>
-                </md-list>
-            </md-drawer>
-
             <md-content>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum
-                magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-                explicabo, neque.
+                <router-view></router-view>
             </md-content>
         </div>
     </div>
 </template>
 
 <script>
+    import router from './router'
+
     export default {
         name: 'app',
-
+        router,
         data() {
             return {
                 showNavigation: false,
@@ -102,17 +89,6 @@
 </script>
 
 <style lang="scss" scoped>
-    /*
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-    */
-
     .page-container {
         min-height: 100vh;
         overflow: hidden;

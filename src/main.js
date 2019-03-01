@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from 'vue-router'
 import './registerServiceWorker'
 
 import {MdDrawer, MdToolbar, MdButton, MdList, MdIcon, MdContent} from 'vue-material/dist/components/'
@@ -12,6 +13,7 @@ Vue.use(MdButton);
 Vue.use(MdList);
 Vue.use(MdIcon);
 Vue.use(MdContent);
+Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
