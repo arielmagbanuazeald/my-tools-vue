@@ -24,28 +24,28 @@
                     <md-list-item>
                         <md-icon>move_to_inbox</md-icon>
                         <router-link to="/" exact>
-                            <span class="md-list-item-text"><a>Text Difference</a></span>
+                            <a><span class="md-list-item-text">Text Difference</span></a>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item>
                         <md-icon>send</md-icon>
                         <router-link to="/ipsum-generator" exact>
-                            <span class="md-list-item-text"><a>Ipsum Generator</a></span>
+                            <a><span class="md-list-item-text">Ipsum Generator</span></a>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item>
                         <md-icon>send</md-icon>
                         <router-link to="/json-lint" exact>
-                            <span class="md-list-item-text"><a>JSON Lint</a></span>
+                            <a><span class="md-list-item-text">JSON Lint</span></a>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item>
                         <md-icon>send</md-icon>
                         <router-link to="/css-lint" exact>
-                            <span class="md-list-item-text"><a>Css Lint</a></span>
+                            <a><span class="md-list-item-text">Css Lint</span></a>
                         </router-link>
                     </md-list-item>
 
