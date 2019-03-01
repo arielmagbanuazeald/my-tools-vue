@@ -9,10 +9,6 @@
                     <md-icon>menu</md-icon>
                 </md-button>
                 <span class="md-title">My Title</span>
-
-                <div class="md-toolbar-section-end">
-                    <md-button @click="showSidepanel = true">Favorites</md-button>
-                </div>
             </md-toolbar>
 
             <md-drawer :md-active.sync="showNavigation">
