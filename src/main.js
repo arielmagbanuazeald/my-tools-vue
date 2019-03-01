@@ -4,7 +4,7 @@ import './registerServiceWorker'
 
 import {MdDrawer, MdToolbar, MdButton, MdList, MdIcon, MdContent} from 'vue-material/dist/components/'
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+import 'vue-material/dist/theme/default-dark.css'
 
 Vue.use(MdDrawer);
 Vue.use(MdToolbar);

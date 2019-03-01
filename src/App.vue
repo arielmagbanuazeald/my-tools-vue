@@ -114,7 +114,7 @@
     */
 
     .page-container {
-        min-height: 300px;
+        min-height: 100vh;
         overflow: hidden;
         position: relative;
         border: 1px solid rgba(#000, .12);
@@ -128,5 +128,6 @@
 
     .md-content {
         padding: 16px;
+        height: 100%;
     }
 </style>
