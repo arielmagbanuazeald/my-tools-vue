@@ -2,7 +2,6 @@
     <div id="app">
         <!--<img alt="Vue logo" src="./assets/logo.png">-->
         <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
-
         <div class="page-container md-layout-column">
             <md-toolbar>
                 <md-button class="md-icon-button" @click="showNavigation = true">
@@ -80,6 +79,8 @@
 </script>
 
 <style lang="scss">
+    @import "~vue-material/dist/theme/engine";
+
     // mixins
     @mixin main-route-list-active-styling() {
         div.md-list-item-content{
@@ -87,6 +88,10 @@
             font-size: 18px;
             font-weight: bold;
         }
+    }
+
+    #app {
+        height: 100vh;
     }
 
     .page-container {
@@ -102,8 +107,12 @@
     }
 
     .md-content {
+        margin-top: 64px;
+        margin-bottom: 64px;
+        margin-left: 128px;
+        margin-right: 128px;
         padding: 16px;
-        height: 100%;
+        height: 100vh;
     }
 
     a.md-list-item-router.tool-item-exact-active {
