@@ -32,12 +32,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="md-layout-item md-size-100">
+                    <div id="diffoutput">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import * as diffview from '../js/diffview'
+    import * as difflib from '../js/difflib'
+
     export default {
         data() {
             return {
@@ -49,7 +58,10 @@
 
         methods: {
             compare() {
-                alert(this.comparisonStyle);
+                // alert(this.comparisonStyle);
+                
+                console.log(diffview);
+                console.log(difflib);
             }
         }
     }
