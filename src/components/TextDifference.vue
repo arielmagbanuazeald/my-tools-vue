@@ -59,7 +59,7 @@
         methods: {
             compare() {
                 // alert(this.comparisonStyle);
-                
+
                 console.log(diffview);
                 console.log(difflib);
             }
