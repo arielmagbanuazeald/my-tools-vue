@@ -17,6 +17,12 @@
                 </md-toolbar>
 
                 <md-list>
+                    <md-list-item to="/" exact>Text Difference</md-list-item>
+                    <md-list-item to="/ipsum-generator" exact>Ipsum Generator</md-list-item>
+                    <md-list-item to="/json-lint" exact>JSON Lint</md-list-item>
+                    <md-list-item to="/css-lint" exact>CSS Lint</md-list-item>
+
+                    <!--
                     <md-list-item>
                         <md-icon>move_to_inbox</md-icon>
                         <router-link to="/" exact>
@@ -43,17 +49,6 @@
                         <router-link to="/css-lint" exact>
                             <a><span class="md-list-item-text">Css Lint</span></a>
                         </router-link>
-                    </md-list-item>
-
-                    <!--
-                    <md-list-item>
-                        <md-icon>delete</md-icon>
-                        <span class="md-list-item-text">Trash</span>
-                    </md-list-item>
-
-                    <md-list-item>
-                        <md-icon>error</md-icon>
-                        <span class="md-list-item-text">Spam</span>
                     </md-list-item>
                     -->
                 </md-list>
@@ -84,15 +79,23 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+    // mixins
+    @mixin main-route-list-active-styling() {
+        div.md-list-item-content{
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
     .page-container {
         min-height: 100vh;
         overflow: hidden;
         position: relative;
-        border: 1px solid rgba(#000, .12);
+        /*border: 1px solid rgba(#000, .12);*/
     }
 
-    // Demo purposes only
     .md-drawer {
         width: 300px;
         max-width: calc(100vw - 125px);
@@ -101,5 +104,13 @@
     .md-content {
         padding: 16px;
         height: 100%;
+    }
+
+    a.md-list-item-router.tool-item-exact-active {
+        @include main-route-list-active-styling()
+    }
+
+    a.md-list-item-router.tool-item-active {
+        @include main-route-list-active-styling()
     }
 </style>

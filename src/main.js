@@ -15,6 +15,10 @@ Vue.use(MdIcon);
 Vue.use(MdContent);
 Vue.use(VueRouter);
 
+// TODO: only a workaround
+Vue.component('router-link', Vue.options.components.RouterLink);
+Vue.component('router-view', Vue.options.components.RouterView);
+
 Vue.config.productionTip = false;
 
 new Vue({
