@@ -28,7 +28,6 @@ The views and conclusions contained in the software and documentation are those 
 authors and should not be interpreted as representing official policies, either expressed
 or implied, of Chas Emerick.
 */
-
 var diffview = {
     /**
      * Builds and returns a visual diff view.  The single parameter, `params', should contain
@@ -127,8 +126,8 @@ var diffview = {
         }
 
         for (var idx = 0; idx < opcodes.length; idx++) {
-            code = opcodes[idx];
-            change = code[0];
+            var code = opcodes[idx];
+            var change = code[0];
             var b = code[1];
             var be = code[2];
             var n = code[3];
@@ -197,3 +196,5 @@ var diffview = {
         return node;
     }
 };
+
+export {diffview}

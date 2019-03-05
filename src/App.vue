@@ -122,4 +122,23 @@
     a.md-list-item-router.tool-item-active {
         @include main-route-list-active-styling()
     }
+
+
+    // this is for text difference
+    table.diff {
+        width: 100%;
+        color: #000000;
+
+        th.author{
+            display: none;
+        }
+
+        /*
+        tbody {
+            tr th:nth-child(odd) {
+                width: 20px;
+            }
+        }
+        */
+    }
 </style>

@@ -20,23 +20,21 @@
                         <div class="md-layout-item md-size-50">
                             <md-field>
                                 <label>Base Text</label>
-                                <md-textarea v-model="baseText" md-autogrow></md-textarea>
+                                <md-textarea id="base-textarea" v-model="baseText" md-autogrow></md-textarea>
                             </md-field>
                         </div>
 
                         <div class="md-layout-item md-size-50">
                             <md-field>
                                 <label>New Text</label>
-                                <md-textarea v-model="newText" md-autogrow></md-textarea>
+                                <md-textarea id="new-textarea" v-model="newText" md-autogrow></md-textarea>
                             </md-field>
                         </div>
                     </div>
                 </div>
 
                 <div class="md-layout-item md-size-100">
-                    <div id="diffoutput">
-
-                    </div>
+                    <div id="diffoutput"></div>
                 </div>
             </div>
         </div>
@@ -44,8 +42,8 @@
 </template>
 
 <script>
-    import * as diffview from '../js/diffview'
-    import * as difflib from '../js/difflib'
+    import {diffview} from '../js/diffview'
+    import {difflib} from '../js/difflib'
 
     export default {
         data() {
@@ -58,17 +56,44 @@
 
         methods: {
             compare() {
-                // alert(this.comparisonStyle);
+                let outputStyle = this.comparisonStyle === 'side-by-side' ? 0 : 1;
 
-                console.log(diffview);
-                console.log(difflib);
+                // get the values of the textarea
+                let baseText = this.$el.querySelector('#base-textarea').value;
+                let newText = this.$el.querySelector('#new-textarea').value;
+
+                console.log(baseText);
+                console.log(newText);
+
+                let baseDiff = difflib.stringAsLines(baseText);
+                let newDiff = difflib.stringAsLines(newText);
+                let sm = new difflib.SequenceMatcher(baseDiff, newDiff);
+                let opcodes = sm.get_opcodes();
+
+                let outputDivContainer = this.$el.querySelector('#diffoutput');
+                outputDivContainer.innerHTML = '';
+
+                let diffResult = diffview.buildView({
+                    baseTextLines: baseDiff,
+                    newTextLines: newDiff,
+                    opcodes: opcodes,
+                    baseTextName: 'Base Text',
+                    newTextName: 'New Text',
+                    // contextSize: contextSize,
+                    viewType: outputStyle
+                });
+
+                // manually set the style since scoped styling won't work on dynamic content.
+                // diffResult.style.cssText = 'width: 100%; color: #000000';
+                outputDivContainer.appendChild(diffResult);
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    @import "~vue-material/dist/theme/engine";
+    @import '~vue-material/dist/theme/engine';
+    @import '../css/diffview.css';
 
     .md-layout-item {
         article {
